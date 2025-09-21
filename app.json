@@ -7,9 +7,14 @@
     "icon": "./assets/images/icon.png",
     "scheme": "flowshield",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "This app needs access to microphone to enable voice chat with the assistant.",
+        "NSCameraUsageDescription": "This app may need camera access for video features.",
+        "UIBackgroundModes": ["audio"]
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -19,13 +24,26 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "RECORD_AUDIO",
+        "INTERNET",
+        "ACCESS_NETWORK_STATE",
+        "MODIFY_AUDIO_SETTINGS"
+      ]
     },
     "web": {
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+      [
+        "@livekit/react-native-expo-plugin",
+        {
+          "audioType": "communication"
+        }
+      ],
+      "@config-plugins/react-native-webrtc",
       "expo-router",
       [
         "expo-splash-screen",
@@ -40,6 +58,10 @@
         }
       ]
     ],
+    "extra": {
+      "LIVEKIT_URL": "wss://flowshield-73zukfuv.livekit.cloud",
+      "LIVEKIT_JWT": "eyJhbGciOiJIUzI1NiJ9.eyJ2aWRlbyI6eyJyb29tSm9pbiI6dHJ1ZSwicm9vbSI6InJlYWN0LW5hdGl2ZS10ZXN0IiwiY2FuUHVibGlzaCI6dHJ1ZSwiY2FuU3Vic2NyaWJlIjp0cnVlfSwiaXNzIjoiQVBJVlF4dWFualg0ajlUIiwiZXhwIjoxNzU4NDI5NzY0LCJuYmYiOjAsInN1YiI6InVzZXIxMjMifQ.sRLtQxUytb7OJ68bHHEg9lp2s3jpDKhMQ46u94K03KM"
+    },
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
