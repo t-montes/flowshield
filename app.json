@@ -13,8 +13,11 @@
       "infoPlist": {
         "NSMicrophoneUsageDescription": "This app needs access to microphone to enable voice chat with the assistant.",
         "NSCameraUsageDescription": "This app may need camera access for video features.",
-        "UIBackgroundModes": ["audio"]
-      }
+        "UIBackgroundModes": [
+          "audio"
+        ]
+      },
+      "bitcode": false
     },
     "android": {
       "adaptiveIcon": {
@@ -29,8 +32,29 @@
         "RECORD_AUDIO",
         "INTERNET",
         "ACCESS_NETWORK_STATE",
-        "MODIFY_AUDIO_SETTINGS"
-      ]
+        "MODIFY_AUDIO_SETTINGS",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.CAMERA",
+        "android.permission.INTERNET",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.WAKE_LOCK",
+        "android.permission.BLUETOOTH",
+        "RECORD_AUDIO",
+        "INTERNET",
+        "ACCESS_NETWORK_STATE",
+        "MODIFY_AUDIO_SETTINGS",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.CAMERA",
+        "android.permission.INTERNET",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.SYSTEM_ALERT_WINDOW",
+        "android.permission.WAKE_LOCK",
+        "android.permission.BLUETOOTH"
+      ],
+      "package": "com.anonymous.flowshield"
     },
     "web": {
       "output": "static",
